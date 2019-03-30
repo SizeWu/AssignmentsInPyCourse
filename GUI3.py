@@ -29,9 +29,9 @@ class Interface(QMainWindow):
                               'night': {'weather': '', 'temp': '', 'wind': ''}
                               }
                          }
-        self.appkey = "58e310dfad9690582a36720694b356f0"     # 聚合数据申请的key
-
-        self.city = QLabel('城市')                            # 创建 QLabel 和 QLineEdit
+        self.appkey = "1be2cc9793f64ff4321dbb71c0a29380"     # 聚合数据申请的key
+        # 创建 QLabel 和 QLineEdit的实例，在后面的display里显示
+        self.city = QLabel('城市')          # 下面是要显示的内容
         self.date = QLabel('日期')
         self.week = QLabel('星期')
         self.lunar = QLabel('农历')
@@ -43,7 +43,7 @@ class Interface(QMainWindow):
         self.wind = QLabel('刮风')
         self.pm25 = QLabel('PM2.5')
 
-        self.line11 = QLineEdit()
+        self.line11 = QLineEdit()       # 数据显示在Line里面
         self.line12 = QLineEdit()
         self.line13 = QLineEdit()
         self.line14 = QLineEdit()
@@ -67,7 +67,7 @@ class Interface(QMainWindow):
 
     def initUI(self):
 
-        # 下面的注释是学的时候写的，都是英文
+        # 下面的注释是学的时候写的，都是英文，后面为了说清楚，就写中文了
         # Initialize the status bar with 'Ready'
         self.statusBar().showMessage('Ready')
 
@@ -227,7 +227,7 @@ class Interface(QMainWindow):
     # 显示内容
     def display(self):
         # Labels and lines
-
+        # 设置 line 里的文字内容
         self.line11.setText(self.infor['city'])
         self.line12.setText(self.datadict[self.infor['date']]['date'])
         if self.infor['date'] == 'today':
@@ -256,6 +256,7 @@ class Interface(QMainWindow):
         self.centralWidget().setLayout(grid)
         grid.setSpacing(15)
 
+        # 设置位置
         grid.addWidget(self.city, 1, 1)
         grid.addWidget(self.date, 1, 3)
         grid.addWidget(self.week, 1, 5)

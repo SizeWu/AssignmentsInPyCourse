@@ -35,7 +35,7 @@ def request1(appkey, m="GET", city='合肥'):
                 }
     url = "http://op.juhe.cn/onebox/weather/query"
     params = {
-        "cityname": city,   # 查询合肥的天气
+        "cityname": city,   # 查询该城市的天气
         "key": appkey,      # 应用APPKEY
         "dtype": "json",    # 返回数据的格式为json
     }
